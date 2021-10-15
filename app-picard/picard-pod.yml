@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-picard-demo
+  labels:
+    app: picard-demo
+spec:
+  containers:
+  - name: picard-demo
+    image: hodei/picard-demo
+    ports:
+    - name: nodeappport
+      containerPort: 3000
+
+
+
+  

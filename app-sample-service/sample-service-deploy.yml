@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: sample-service-deployment
+  labels:
+    app: sample-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-service
+  template:
+    metadata:
+      labels:
+        app: sample-service
+    spec:
+      containers:
+      - name: sample-service
+        image: taupoali/sample-service
+        ports:
+        - containerPort: 8080
